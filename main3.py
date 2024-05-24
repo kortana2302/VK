@@ -35,7 +35,7 @@ if st.button('Расчет') and len(text)>0:
     text = f2(text)
     embedding = np.array(vectorize(text)).reshape(1, -1)
     pred = kmeans.predict(embedding.astype('double'))
-    df_cluster = df_new[df_new['cluster_Kmeans'] == pred[0]]
+    df_cluster = df_new[df_new['cluster_AP'] == pred[0]]
     if len(df_cluster)==0:
         col2.write('Нет рекомендаций') 
     else:
